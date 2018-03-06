@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta http-equiv="contente-type"
+        content="text/html; charset=UTF-8">
+    <link type-"text/css" href="./style.css" rel="stylesheet">
+    <title><%=title %></title>
+</head>
+<body>
+    <head>
+        <h1><%=title %></h1>
+    </head>
+    <div role="main">
+        <p><%=content %></p>
+        <p><table>
+                <% for (var key in data) { %>
+                    <%- include('data_item', { rel_path:'./', key:key, val:[data[key]] }) %>
+                <% } %>
+            </table></p>
+        <p><a href="/other">Other Page に移動&gt;&gt;</a></p>
+        <form method="post" action="/other">
+            <p>
+                <input type="text" name="msg">
+                <input type="submit" value="Click">
+            </p>
+        </form>
+    </div>
+</body>
+</html>
