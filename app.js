@@ -4,8 +4,8 @@ const ejs = require('ejs');
 const url = require('url');
 const qs = require('querystring');
 
-const index_page = fs.readFileSync(__dirname + '/views/index.ejs', 'utf8');
-const other_page = fs.readFileSync(__dirname + '/views/other.ejs', 'utf8');
+const index_page = fs.readFileSync(__dirname + '/index.ejs', 'utf8');
+const other_page = fs.readFileSync(__dirname + '/other.ejs', 'utf8');
 const style_css = fs.readFileSync(__dirname + '/style.css', 'utf8');
 console.log('__dirname: ' + __dirname);
 
@@ -55,6 +55,8 @@ function response_index(request, response) {
         title: "Index",
         content: msg,
         data: data,
+        filename: __dirname + '/data_item',
+        // filename: '/E:/SourceTree/nodejs-cho-numon/data_item',
     });
     response.writeHead(200, {'Content-Type': 'text/html'});
     response.write(content);

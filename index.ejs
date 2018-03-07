@@ -14,7 +14,7 @@
         <p><%=content %></p>
         <p><table>
                 <% for (var key in data) { %>
-                    <%- include('data_item', { rel_path:'./', key:key, val:[data[key]] }) %>
+                    <%- include(filename, { key:key, val:[data[key]] }) %>
                 <% } %>
             </table></p>
         <p><a href="/other">Other Page に移動&gt;&gt;</a></p>
